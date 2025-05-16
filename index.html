@@ -4,6 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Kesehatan Sehat - Info Kesehatan Terpercaya</title>
+
+
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
 
@@ -164,7 +166,6 @@
     color: #fff;
   }
 
-  /* Carousel frame and slider styles (unchanged from your code) */
   .carousel-frame {
     position: relative;
     width: 900px;
@@ -173,7 +174,7 @@
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 12px 30px rgb(10 116 218 / 0.4);
-     no-repeat center center/cover;
+    background: url('img/header-background.jpg') no-repeat center center/cover;
   }
   .carousel-slider {
     display: flex;
@@ -185,7 +186,9 @@
     width: 900px;
     flex-shrink: 0;
     background: rgba(255 255 255 / 0.95);
-    margin: 9px;
+    margin: 1px;
+    padding: 90px;
+    padding-right: 30px;
     border-radius: 20px;
     padding: 16px;
     box-sizing: border-box;
@@ -226,44 +229,54 @@
     max-height: 80px;
   }
 
-  /* Modified grid articles with image on top */
+  /* Articles container as horizontal scroll with larger cards */
+  /* ... existing styles ... */
+
+  /* Modify articles container as vertical flex column */
   .articles {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(280px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 2.5rem;
     margin-bottom: 6rem;
   }
+
   .article-card {
+    width: 100%;  /* full container width */
+    max-width: 960px; /* max width for desktop */
+    height: auto; /* adjust height based on content */
     background: #fff;
     border-radius: 16px;
     box-shadow: 0 8px 18px rgba(10, 116, 218, 0.15);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
-    opacity: 0;
-    transform: translateY(30px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 530px;
-    width: 430px;
-    padding: 1rem;
+    padding: 1.2rem;
+    opacity: 0;
+    transform: translateY(30px);
+    margin-left: auto;
+    margin-right: auto;
   }
+
   .article-card.visible {
     opacity: 1;
     transform: translateY(0);
     animation: fadeInUp 1s forwards;
   }
+
   .article-card:hover {
     box-shadow: 0 15px 30px rgba(10, 116, 218, 0.3);
     transform: translateY(-5px);
   }
+
   .article-image {
     width: 100%;
-    height: 380px;
+    height: 360px;
     overflow: hidden;
     border-radius: 16px;
     box-shadow: 0 6px 15px rgba(10, 116, 218, 0.3);
     background: #eee;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
   }
   .article-image img {
     width: 100%;
@@ -274,21 +287,42 @@
   .article-card:hover .article-image img {
     transform: scale(1.1);
   }
+
   .article-card h3 {
     color: #0a74da;
     font-weight: 700;
-    font-size: 1.2rem;
-    margin-bottom: 0.8rem;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
     text-align: center;
     width: 100%;
   }
+
   .article-card p {
     color: #444;
     font-weight: 400;
-    font-size: 1rem;
-    line-height: 1.4;
+    font-size: 1.15rem;
+    line-height: 1.5;
     text-align: center;
     width: 100%;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .article-card {
+      max-width: 100%;
+      padding: 1rem;
+    }
+    .article-image {
+      height: 220px;
+      margin-bottom: 12px;
+    }
+    .article-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+    }
+    .article-card p {
+      font-size: 1rem;
+    }
   }
 
   @keyframes fadeInUp {
@@ -302,7 +336,7 @@
     }
   }
 
-  /* About Section */
+  /* About and footer (unchanged) */
   .about {
     background: #0a74da;
     color: #f0f9ff;
@@ -322,8 +356,6 @@
     margin: 0 auto;
     font-weight: 300;
   }
-
-  /* Contact Section */
   footer {
     background: #fff;
     border-top: 2px solid #0a74da;
@@ -334,14 +366,7 @@
     letter-spacing: 0.06em;
   }
 
-  .fade-out {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-  }
-
-  /* Responsive */
+  /* Responsive adjustments */
   @media (max-width: 768px) {
     .carousel-frame {
       width: 100% !important;
@@ -375,10 +400,11 @@
       max-height: none !important;
     }
     .articles {
-      grid-template-columns: 1fr !important;
-      padding: 0 1rem;
+      padding-left: 1rem;
     }
     .article-card {
+      width: 90vw !important;
+      height: auto !important;
       padding: 1rem !important;
     }
     .article-image {
@@ -400,7 +426,7 @@
 </nav>
 
 <div class="header-search-wrapper" aria-label="Header and search area">
-  <img src="background.png" alt="Orang sedang diperiksa dokter" class="background-image" />
+  <img src="img/header-background.jpg" alt="Orang sedang diperiksa dokter" class="background-image" />
   <section class="search-section" aria-label="Pencarian informasi kesehatan">
     <input type="text" id="searchInput" placeholder="Cari informasi kesehatan..." aria-label="Search health articles" />
   </section>
@@ -411,16 +437,13 @@
 </div>
 
 <main class="container">
-  <!-- Carousel frame -->
   <section class="carousel-frame" aria-label="Carousel artikel kesehatan">
     <div class="carousel-slider" id="carouselSlider">
       <!-- Slides inserted dynamically -->
     </div>
   </section>
 
-  <!-- Grid articles -->
-  <section id="articles" class="articles" aria-live="polite" aria-label="Health Articles List">
-  </section>
+  <section id="articles" class="articles" aria-live="polite" aria-label="Health Articles List"></section>
 
   <section id="about" class="about" tabindex="0" aria-label="About section">
     <h2>Tentang Website Kesehatan</h2>
@@ -474,7 +497,7 @@
 
   let currentIndex = 0;
   const slideCount = 10;
-  const slideWidth = 920; // adjusted width including 3px increase
+  const slideWidth = 902;
 
   function createSlide(article) {
     return `
@@ -551,7 +574,7 @@
     renderCarousel();
     setInterval(() => {
       slideNext();
-    }, 3500); // slower slide every 3.5 seconds
+    }, 3500);
   }
 
   initCarousel();
@@ -586,4 +609,5 @@
 </script>
 
 </body>
-</html>
+    </html>
+  
