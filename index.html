@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kesehatan Sehat - Info Kesehatan Terpercaya</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="logo">Kesehatan</div>
+  <ul>
+    <li><a href="#home" class="nav-link">Home</a></li>
+    <li><a href="#articles" class="nav-link">Articles</a></li>
+    <li><a href="#about" class="nav-link">About</a></li>
+    <li><a href="#contact" class="nav-link">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="header-search-wrapper" aria-label="Header and search area">
+  <img src="background.png" alt="Orang sedang diperiksa dokter" class="background-image" />
+  <section class="search-section" aria-label="Pencarian informasi kesehatan">
+    <input type="text" id="searchInput" placeholder="Cari informasi kesehatan..." aria-label="Search health articles" />
+  </section>
+  <header id="home" aria-label="Section header">
+    <h1>Sehat Itu Berharga</h1>
+    <p>Temukan info kesehatan terpercaya dan tips hidup sehat setiap hari.</p>
+  </header>
+</div>
+
+<main class="container">
+  <section class="carousel-frame" aria-label="Carousel artikel kesehatan">
+    <div class="carousel-slider" id="carouselSlider">
+      <!-- Slides inserted dynamically -->
+    </div>
+  </section>
+
+  <section id="articles" class="articles" aria-live="polite" aria-label="Health Articles List"></section>
+
+  <section id="about" class="about" tabindex="0" aria-label="About section">
+    <h2>Tentang Website Kesehatan</h2>
+    <p>Kami menyediakan artikel-artikel terpercaya mengenai kesehatan, gaya hidup, dan nutrisi agar Anda bisa hidup lebih sehat dan bahagia.</p>
+  </section>
+
+  <section id="contact" tabindex="0" aria-label="Contact section">
+    <footer>
+      &copy; 2024 Kesehatan Sehat. Designed with ❤️ to promote healthy living.
+    </footer>
+  </section>
+</main>
+          <!-- JAVASCRIPT -->
+     <script src="main.js"></script>
+</body>
+</html>
