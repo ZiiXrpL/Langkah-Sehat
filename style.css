@@ -212,13 +212,6 @@
     font-weight: 700;
     margin-bottom: 1rem;
   }
-  .carousel-slide p {
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.3;
-    overflow: auto;
-    max-height: 80px;
-  }
 
   /* Articles container as horizontal scroll with larger cards */
   /* ... existing styles ... */
